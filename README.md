@@ -1,4 +1,4 @@
-# Polkadot and Kusama Logs
+# Polkadot and Kusama Common Logs
 ## Here are some Polkadot, Kusama and Westend logs and what they mean. ##
 
 ## Run this to see the logs
@@ -36,7 +36,7 @@ parent_hash: 0xcc0d…b9b1; extrinsics (2): [0x8e13…4d35, 0xc9e6…2eb1]]
 ⚙️  Syncing  0.3 bps, target=#8303186 (30 peers), best: #8303176 (0xca88…809f), 
 finalized #8303175 (0x04ed…4512), ⬇ 49.2kiB/s ⬆ 410.8kiB/s
 ```
-## New  epoch will start in block 0x9c17…9142 
+## New epoch 14189 will start in block 0x9c17…9142 
 ```
 👶 New epoch 14189 launching at block 0x9c17…9142 (block slot 271007079 >= start slot 271007079).
 ```
