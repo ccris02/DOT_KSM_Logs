@@ -1,14 +1,18 @@
-# DOT_KSM_Logs
-## Here are some Polkadot, Kusama, Westend logs and what they mean. ##
+# Polkadot and Kusama Logs
+## Here are some Polkadot, Kusama and Westend logs and what they mean. ##
 
-## Commen Log
+## Run this to see the logs
+```
+sudo journalctl -u polkadot.service -n 1000
+```
+## Common Log (Life is good)
 ![image](https://user-images.githubusercontent.com/66147586/125215077-1cf50900-e26f-11eb-891b-e3aab65cb95e.png)
 
 ## Life is good, Block #8302347 has been imported
 ```
 ✨ Imported #8302347 (0x296d…fb2f)
 ```
-## Life is good, you have 49 peers (in and out connections), the current block is #8302347 and your node finalized block #8302345 Downloading 2.7MiB/s and Uploading ⬆ 1.9MiB/s
+## You have 49 peers (in and out connections), the current block is #8302347, and your node finalized block #8302345 Downloading 2.7MiB/s and Uploading ⬆ 1.9MiB/s
 ```
 💤 Idle (49 peers), best: #8302347 (0x296d…fb2f), finalized #8302345 (0x22e3…877e), ⬇ 2.7MiB/s ⬆ 1.9MiB/s
 ```
@@ -27,12 +31,12 @@
 🎁 Prepared block for proposing at 8302664 [hash: 0x5de0dd21af6f60efe7fd90e750c323868c08573cb432aa741c684200b4864bfc; 
 parent_hash: 0xcc0d…b9b1; extrinsics (2): [0x8e13…4d35, 0xc9e6…2eb1]]
 ```
-## Node is syncing, target, best and finalized blocks are diplayed 
+## Node is syncing, target, best and finalized blocks are displayed 
 ```
 ⚙️  Syncing  0.3 bps, target=#8303186 (30 peers), best: #8303176 (0xca88…809f), 
 finalized #8303175 (0x04ed…4512), ⬇ 49.2kiB/s ⬆ 410.8kiB/s
 ```
-## New  epoch will start in block 0x9c17…9142 
+## New  epoch will start in block 0x9c17…9142 
 ```
 👶 New epoch 14189 launching at block 0x9c17…9142 (block slot 271007079 >= start slot 271007079).
 ```
@@ -48,7 +52,7 @@ previously finalized node")))
 ```
 
 # Errors
-![image](https://user-images.githubusercontent.com/66147586/125214969-a48e4800-e26e-11eb-9549-f457e4baac67.png)
+![image](https://user-images.githubusercontent.com/66147586/125225233-cb0aae00-e283-11eb-865a-b742d7724a82.png)
 
 ## 
 ```
@@ -108,6 +112,11 @@ Failed to fetch basics from runtime API err=RuntimeApiError("Application(NotInFi
 ```
 ##
 ```
+Potential safety failure: reverting finalized block (7714603, 
+0x5156dfc5487fd4028293e9c7b99f3472ca4fefe3e103db79f77df53b9ad751bc)
+```
+## 
+```
 error=Runtime(RuntimeRequest(RuntimeApiError("Application(NotInFinalizedChain)"))) 
 ctx="Error in Requester::update_fetching_heads"
 ```
@@ -115,6 +124,10 @@ ctx="Error in Requester::update_fetching_heads"
 ```
 Importing locally an already known assignment fingerprint=Assignment
 (0xe1a76acab8c5e94b79d6fb8d7c18c774ef8a2f6f2eccb7b1256c12647af41774,0, ValidatorIndex(172))
+```
+## Somme issues connecting to the Telemetry server
+```
+❌ Error while dialing /dns/telemetry.polkadot.io/tcp/443/x-parity-wss/%2Fsubmit%2F: Custom { kind: Other, error: Timeout }
 ```
 ##
 ```
@@ -127,9 +140,21 @@ fetch_pov_job err=FetchPoV(NetworkError(Network(Timeout)))
 ```
 ##
 ```
+(offchain call) Error submitting a transaction to the pool: RuntimeApi("Potential long-range attack: 
+block not in finalized chain.")
+```
+##
+```
+Got a bad approval from peer peer_id=PeerId("12D3KooWS8CrsBPHzJBL6gu8AqoB83UuNw744pbJ73ZTEGijd5Kc") 
+error=Unknown block: 0x435f610ae1bb035bead9a54988108cb56606d1a2d9cbdda28c5dcae69ecc6e80"
+```
+##
+```
 Shutting down Network Bridge due to error err=Context("Signal channel is terminated and empty.")
 ```
 ##
 ```
 join multicast failed: Address already in use (os error 98)
 ```
+## Well that escalated quickly
+![image](https://user-images.githubusercontent.com/66147586/125232946-833f5300-e292-11eb-8ac6-413c0661904c.png)
