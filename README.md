@@ -1,10 +1,18 @@
 # Polkadot and Kusama Common Logs
 ## Here are some Polkadot, Kusama and Westend logs and what they mean. ##
+Few questions come to mind when troubleshooing issue
 
-## Run this to see the logs
+- Are you ruinning the Latest version of code?
+- 
+-
+
+## You can review some of the reported Bugs here https://github.com/paritytech/polkadot/issues
+
+## To see your logs run this 
 ```
 sudo journalctl -u polkadot.service -n 1000
 ```
+You can modify the ```1000``` to display fewer or more logs
 ## Common Log (Life is good)
 ![image](https://user-images.githubusercontent.com/66147586/125215077-1cf50900-e26f-11eb-891b-e3aab65cb95e.png)
 
@@ -16,7 +24,10 @@ sudo journalctl -u polkadot.service -n 1000
 ```
 💤 Idle (49 peers), best: #8302347 (0x296d…fb2f), finalized #8302345 (0x22e3…877e), ⬇ 2.7MiB/s ⬆ 1.9MiB/s
 ```
-## Life is good, your node discovered a new peer 
+- By default you should have areound 50 peers, you can modify it to reduce or increase the number
+- Increasing number of peer will cause bigger bandwidth utilization but there is no proof that it will increas era poins
+
+## Your node just discovered a new peer 
 ```
 🔍 Discovered new external address for our node: 
 /ip4/100.107.63.128/tcp/30333/p2p/12D3KooWDz7FcPsbr8v5pvPngz4GtYWVrzYBsn3CLb5NVEHPBfQa
@@ -36,6 +47,10 @@ parent_hash: 0xcc0d…b9b1; extrinsics (2): [0x8e13…4d35, 0xc9e6…2eb1]]
 ⚙️  Syncing  0.3 bps, target=#8303186 (30 peers), best: #8303176 (0xca88…809f), 
 finalized #8303175 (0x04ed…4512), ⬇ 49.2kiB/s ⬆ 410.8kiB/s
 ```
+## You will not going to see this too often, increas number of Validators in the Active set
+```
+💸 new validator set of size 350 has been elected via ElectionCompute::Unsigned for era 905
+```
 ## New epoch 14189 will start in block 0x9c17…9142 
 ```
 👶 New epoch 14189 launching at block 0x9c17…9142 (block slot 271007079 >= start slot 271007079).
@@ -44,16 +59,23 @@ finalized #8303175 (0x04ed…4512), ⬇ 49.2kiB/s ⬆ 410.8kiB/s
 ```
 👶 Next epoch starts at slot 271007679
 ```
-## 
+## Are you running the latest version of the code? Are you sure?
 ```
 💔 Error importing block 0xbe4cdf08f705a8095a0d860ae6dfd17ef0e4766508c40d5d1a5efd4cbf6ba23d: Err(Other(ClientImport
 ("Invalid operation in the pending changes tree: Tried to import or finalize node that is an ancestor of a
 previously finalized node")))
 ```
+You will see this if your node is running incorect version.
 
 # Errors
 ![image](https://user-images.githubusercontent.com/66147586/125225233-cb0aae00-e283-11eb-865a-b742d7724a82.png)
 
+## Your node was experiancing some issues with ```tokio-runtime-worker``` report this bug
+```
+Thread 'tokio-runtime-worker' panicked at 'Trying to pin pending state', /usr/local/cargo/git/checkouts/substrate-7e08433d4c370a21/1b758b2/client/state-db/src/noncanonical.rs:527
+This is a bug. Please report it at:
+https://github.com/paritytech/polkadot/issues/new
+```
 ## 
 ```
 Some network error occurred when fetching erasure chunk origin=Public(dcf82a726e45a02a61d0944a21969750772267ca1e
@@ -93,7 +115,7 @@ block not in finalized chain.")
 Fetching collation failed due to network error hash=0xd94c9dfda0b98974bfea0eaa56dd0be6afeb93094c35bf111c65669ccc68ba1e
 para_id=Id(2007) peer_id=PeerId("12D3KooWMKZKyvxcerX4fWp8ykhVFuYNRKupLApBSckqZGs814k7") err=Network(Timeout)
 ```
-##
+## https://github.com/paritytech/polkadot/blob/c0387bab91c324bb342e2c5de3910ad6d2d1b91b/node/core/candidate-validation/src/lib.rs
 ```
 Failed to validate and make available: Mpsc(SendError { kind: Disconnected })
 ```
@@ -115,26 +137,26 @@ Failed to fetch basics from runtime API err=RuntimeApiError("Application(NotInFi
 Potential safety failure: reverting finalized block (7714603, 
 0x5156dfc5487fd4028293e9c7b99f3472ca4fefe3e103db79f77df53b9ad751bc)
 ```
-## 
+## https://github.com/paritytech/polkadot/blob/c0387bab91c324bb342e2c5de3910ad6d2d1b91b/node/network/availability-distribution/src/lib.rs 
 ```
 error=Runtime(RuntimeRequest(RuntimeApiError("Application(NotInFinalizedChain)"))) 
 ctx="Error in Requester::update_fetching_heads"
 ```
-##
+## https://github.com/paritytech/polkadot/blob/c0387bab91c324bb342e2c5de3910ad6d2d1b91b/node/network/approval-distribution/src/lib.rs
 ```
 Importing locally an already known assignment fingerprint=Assignment
 (0xe1a76acab8c5e94b79d6fb8d7c18c774ef8a2f6f2eccb7b1256c12647af41774,0, ValidatorIndex(172))
 ```
-## Somme issues connecting to the Telemetry server
+## Some issues connecting to the Telemetry server
 ```
 ❌ Error while dialing /dns/telemetry.polkadot.io/tcp/443/x-parity-wss/%2Fsubmit%2F: Custom { kind: Other, error: Timeout }
 ```
-##
+## https://github.com/paritytech/polkadot/blob/8a6af4412ffc6d327775310c9b4ff527f3345958/node/network/collator-protocol/src/validator_side/mod.rs
 ```
 Trying to insert a pending candidate failed, because there is already one! relay_parent=0xd94c9dfda0b98974bfea0
 eaa56dd0be6afeb93094c35bf111c65669ccc68ba1e candidate=0x00b0ec80ec2e47237cd5de2c4ce9ee97028fe543eb5b29256383a664fb6f9682
 ```
-##
+## https://github.com/paritytech/polkadot/blob/f9d71f8c7eb1992efefcba17ed530c1440adb224/node/network/availability-distribution/src/pov_requester/mod.rs
 ```
 fetch_pov_job err=FetchPoV(NetworkError(Network(Timeout)))
 ```
@@ -143,12 +165,12 @@ fetch_pov_job err=FetchPoV(NetworkError(Network(Timeout)))
 (offchain call) Error submitting a transaction to the pool: RuntimeApi("Potential long-range attack: 
 block not in finalized chain.")
 ```
-##
+## https://github.com/paritytech/polkadot/blob/c0387bab91c324bb342e2c5de3910ad6d2d1b91b/node/network/approval-distribution/src/lib.rs
 ```
 Got a bad approval from peer peer_id=PeerId("12D3KooWS8CrsBPHzJBL6gu8AqoB83UuNw744pbJ73ZTEGijd5Kc") 
 error=Unknown block: 0x435f610ae1bb035bead9a54988108cb56606d1a2d9cbdda28c5dcae69ecc6e80"
 ```
-##
+## https://github.com/paritytech/polkadot/blob/8a6af4412ffc6d327775310c9b4ff527f3345958/node/network/bridge/src/lib.rs
 ```
 Shutting down Network Bridge due to error err=Context("Signal channel is terminated and empty.")
 ```
@@ -156,5 +178,5 @@ Shutting down Network Bridge due to error err=Context("Signal channel is termina
 ```
 join multicast failed: Address already in use (os error 98)
 ```
-## Well that escalated quickly
+## Well this is where we need to do some troubleshooting
 ![image](https://user-images.githubusercontent.com/66147586/125232946-833f5300-e292-11eb-8ac6-413c0661904c.png)
