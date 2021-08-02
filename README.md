@@ -2,7 +2,7 @@
 ## Here are some Polkadot, Kusama and Westend logs and what they mean. ##
 Few questions come to mind when troubleshooing issue
 
-- Are you ruinning the Latest version of code?
+- Are you running the Latest version of code?
 - 
 -
 
@@ -110,6 +110,27 @@ fetch_pov_job err=FetchPoV(NetworkError(Network(Timeout)))
 (offchain call) Error submitting a transaction to the pool: RuntimeApi("Potential long-range attack:
 block not in finalized chain.")
 ```
+##
+```
+unsigned transaction validation failed due to Module { index: 37, error: 2, message: Some("PreDispatchWeakSubmission") }
+```
+##
+```
+Requester of candidate validation dropped
+```
+##
+```
+Importing locally an already known approval fingerprint=Approval(FpHash, 1, ValidatorIndex(2))
+```
+##
+```
+fetch_pov_job err=FetchPoV(NetworkError(Network(DialFailure)))
+```
+##
+```
+Detected prevote equivocation in the finality worker: Equivocation
+```
+
 ##
 ```
 Fetching collation failed due to network error hash=0xd94c9dfda0b98974bfea0eaa56dd0be6afeb93094c35bf111c65669ccc68ba1e
