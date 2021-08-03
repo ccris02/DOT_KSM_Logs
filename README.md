@@ -1,6 +1,6 @@
 # Polkadot and Kusama Common Logs
 ## Here are some Polkadot, Kusama and Westend logs and what they mean. ##
-Few questions come to mind when troubleshooing issue
+Few questions come to mind when troubleshooting issue
 
 - Are you running the Latest version of code?
 - 
@@ -24,8 +24,8 @@ You can modify the ```1000``` to display fewer or more logs
 ```
 💤 Idle (49 peers), best: #8302347 (0x296d…fb2f), finalized #8302345 (0x22e3…877e), ⬇ 2.7MiB/s ⬆ 1.9MiB/s
 ```
-- By default you should have areound 50 peers, you can modify it to reduce or increase the number
-- Increasing number of peer will cause bigger bandwidth utilization but there is no proof that it will increas era poins
+- By default you should have around 50 peers, you can modify it to reduce or increase the number
+- Increasing number of peer will cause bigger bandwidth utilization but there is no proof that it will increase era poins
 
 ## Your node just discovered a new peer 
 ```
@@ -65,12 +65,12 @@ finalized #8303175 (0x04ed…4512), ⬇ 49.2kiB/s ⬆ 410.8kiB/s
 ("Invalid operation in the pending changes tree: Tried to import or finalize node that is an ancestor of a
 previously finalized node")))
 ```
-You will see this if your node is running incorect version.
+You will see this if your node is running an incorrect version.
 
 # Errors
 ![image](https://user-images.githubusercontent.com/66147586/125225233-cb0aae00-e283-11eb-865a-b742d7724a82.png)
 
-## Your node was experiancing some issues with ```tokio-runtime-worker``` report this bug
+## Your node was experiencing some issues with ```tokio-runtime-worker``` report this bug
 ```
 Thread 'tokio-runtime-worker' panicked at 'Trying to pin pending state', /usr/local/cargo/git/checkouts/substrate-7e08433d4c370a21/1b758b2/client/state-db/src/noncanonical.rs:527
 This is a bug. Please report it at:
