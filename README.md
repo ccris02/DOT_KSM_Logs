@@ -72,9 +72,7 @@ You will see this if your node is running an incorrect version.
 
 ## Your node was experiencing some issues with ```tokio-runtime-worker``` report this bug
 ```
-Thread 'tokio-runtime-worker' panicked at 'Trying to pin pending state', /usr/local/cargo/git/checkouts/substrate-7e08433d4c370a21/1b758b2/client/state-db/src/noncanonical.rs:527
-This is a bug. Please report it at:
-https://github.com/paritytech/polkadot/issues/new
+Thread 'tokio-runtime-worker' panicked at 'Trying to pin pending state', /usr/local/cargo/git/checkouts/substrate-7e08433d4c370a21/1b758b2/client/state-db/src/noncanonical.rs:527 This is a bug. Please report it at: https://github.com/paritytech/polkadot/issues/new
 ```
 ## 
 ```
