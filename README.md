@@ -2,13 +2,14 @@
 ## Here are some Polkadot, Kusama and Westend logs and what they mean. ##
 Few questions come to mind when troubleshooting issue
 
-- Are you running the Latest version of code?
+- Are you running the latest version of code?
+ https://github.com/paritytech/polkadot/releases/
 - 
 -
 
-## You can review some of the reported Bugs here https://github.com/paritytech/polkadot/issues
+## You can review some of the reported Bugs here and report new once https://github.com/paritytech/polkadot/issues
 
-## To see your logs run this 
+## To see your logs you can run this commend
 ```
 sudo journalctl -u polkadot.service -n 1000
 ```
@@ -16,7 +17,7 @@ You can modify the ```1000``` to display fewer or more logs
 ## Common Log (Life is good)
 ![image](https://user-images.githubusercontent.com/66147586/125215077-1cf50900-e26f-11eb-891b-e3aab65cb95e.png)
 
-## Life is good, Block #8302347 has been imported
+## Block #8302347 has been imported
 ```
 ✨ Imported #8302347 (0x296d…fb2f)
 ```
