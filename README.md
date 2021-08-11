@@ -31,7 +31,7 @@ You can modify the ```1000``` to display fewer or more logs
 ## Your node just discovered a new peer 
 ```
 🔍 Discovered new external address for our node: 
-/ip4/100.107.63.128/tcp/30333/p2p/12D3KooWDz7FcPsbr8v5pvPngz4GtYWVrzYBsn3CLb5NVEHPBfQa
+/ip4/x.x.63.128/tcp/30333/p2p/12D3KooWDz7FcPsbr8v5pvPngz4GtYWVrzYBsn3CLb5NVEHPBfQa
 ```
 ## Reorgs are fine and normal
 ```
@@ -144,7 +144,7 @@ Failed to validate and make available: Mpsc(SendError { kind: Disconnected })
 ```
 Stopped Polkadot Node.
 ```
-## Polkadot service has been started
+## Polkadot service has been started, this could be because you restarted the server, service or node crashed and was automaticay started using servicemd. 
 ```
 Started Polkadot Node.
 ```
