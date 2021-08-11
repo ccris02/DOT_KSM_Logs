@@ -4,8 +4,8 @@ Few questions come to mind when troubleshooting issue
 
 - Are you running the latest version of code?
  https://github.com/paritytech/polkadot/releases/
-- 
--
+- What is the current system utilization?
+- What flags are you running with?
 
 ## You can review some of the reported Bugs here and report new once https://github.com/paritytech/polkadot/issues
 
