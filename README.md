@@ -1,3 +1,21 @@
+---
+id: maintain-common-validator-logs-explanation
+title:  Common Validator Logs Explanation
+sidebar_label: Common Validator Logs Explanation
+---
+
+> The following information applies to the Polkadot, Kusama, Westend networks Validators. 
+
+This guide will explain some of the common logs you could encounter while running a Validator on the Polkadot network.
+
+## Preliminaries
+
+Running a validator on a live network is a lot of responsibility! You will be accountable for not
+only your own stake, but also the stake of your current nominators. If you make a mistake and get
+slashed, your money and your reputation will be at risk. However, running a validator can also be
+very rewarding, knowing that you contribute to the security of a decentralized network while growing
+your stash.
+
 # Polkadot and Kusama Common Logs
 ## Here are some Polkadot, Kusama and Westend logs and what they mean. ##
 Few questions come to mind when troubleshooting issue
