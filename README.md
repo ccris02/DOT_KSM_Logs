@@ -9,7 +9,7 @@ Few questions come to mind when troubleshooting issue
 
 ## You can review some of the reported Bugs here and report new once https://github.com/paritytech/polkadot/issues
 
-## To see your logs you can run this commend
+## To see your logs you can run this command
 ```
 sudo journalctl -u polkadot.service -n 1000
 ```
@@ -144,7 +144,7 @@ Failed to validate and make available: Mpsc(SendError { kind: Disconnected })
 ```
 Stopped Polkadot Node.
 ```
-## Polkadot service has been started, this could be because you restarted the server, service or node crashed and was automaticay started using servicemd. 
+## Polkadot service has been started, this could be because you restarted the server, service or node crashed and was automatically started using servicemd. 
 ```
 Started Polkadot Node.
 ```
