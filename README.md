@@ -170,6 +170,15 @@ Started Polkadot Node.
 ```
 Failed to fetch basics from runtime API err=RuntimeApiError("Application(NotInFinalizedChain)")
 ```
+## 
+```
+Failed to decode transactions list
+```
+## I'm Online message has been send by your Validator node, this usualy happens in the 2nd half of Session if your node has not produced a block.
+```
+[index: 242] Reporting im-online at block: 8785522 (session: 14996): Call::heartbeat(Heartbeat { block_number: 8785522, network_state: OpaqueNetworkState... 
+```
+
 ##
 ```
 Potential safety failure: reverting finalized block (7714603, 
