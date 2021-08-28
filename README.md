@@ -128,6 +128,12 @@ fetch_pov_job err=FetchPoV(NetworkError(Network(Timeout)))
 block not in finalized chain.")
 ```
 ##
+
+```
+Advanced session window for approvals update=Advanced { prev_window_start: 15325, prev_window_end: 15330, new_window_start: 15326, new_window_end: 15331 }
+```
+## 
+
 ```
 unsigned transaction validation failed due to Module { index: 37, error: 2, message: Some("PreDispatchWeakSubmission") }
 ```
