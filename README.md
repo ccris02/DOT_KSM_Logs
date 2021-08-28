@@ -195,6 +195,11 @@ Potential safety failure: reverting finalized block (7714603,
 error=Runtime(RuntimeRequest(RuntimeApiError("Application(NotInFinalizedChain)"))) 
 ctx="Error in Requester::update_fetching_heads"
 ```
+
+## Error after upgrading to 0.9.9 befor 0.9.9-1 was lereased
+```
+error=Runtime(RuntimeRequest(RuntimeApiError("Application(UnknownBlock(\"State already discarded for BlockId::Hash(0x25153021ad82dc150958d1c128da1aa6285475b1bb48b7fe10c9e1e7f8757ea4)\"))")))
+```
 ## https://github.com/paritytech/polkadot/blob/c0387bab91c324bb342e2c5de3910ad6d2d1b91b/node/network/approval-distribution/src/lib.rs
 ```
 Importing locally an already known assignment fingerprint=Assignment
