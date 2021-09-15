@@ -1,6 +1,6 @@
 ---
 id: maintain-common-validator-logs-explanation
-title:  Common Validator Logs Explanation
+title:  Common Validator Logs Explanation
 sidebar_label: Common Validator Logs Explanation
 ---
 
@@ -11,17 +11,17 @@ This guide will explain some of the common logs you could encounter while runnin
 ## Preliminaries
 
 Running a validator on a live network is a lot of responsibility! You will be accountable for not
-only your own stake, but also the stake of your current nominators. If you make a mistake and get
+only your own stake but also the stake of your current nominators. If you make a mistake and get
 slashed, your money and your reputation will be at risk. However, running a validator can also be
 very rewarding, knowing that you contribute to the security of a decentralized network while growing
 your stash.
 
 # Polkadot and Kusama Common Logs
-## Here are some Polkadot, Kusama and Westend logs and what they mean. ##
-Few questions come to mind when troubleshooting issue
+## Here are some Polkadot, Kusama, and Westend logs and what they mean. ##
+Few questions come to mind when troubleshooting the issue
 
-- Are you running the latest version of code?
- https://github.com/paritytech/polkadot/releases/
+- Are you running the latest version of the code?
+ https://github.com/paritytech/polkadot/releases/
 - What is the current system utilization?
 - What flags are you running with?
 
@@ -37,50 +37,50 @@ You can modify the ```1000``` to display fewer or more logs
 
 ## Block #8302347 has been imported
 ```
-✨ Imported #8302347 (0x296d…fb2f)
+ Imported #8302347 (0x296d…fb2f)
 ```
 ## You have 49 peers (in and out connections), the current block is #8302347, and your node finalized block #8302345 Downloading 2.7MiB/s and Uploading ⬆ 1.9MiB/s
 ```
-💤 Idle (49 peers), best: #8302347 (0x296d…fb2f), finalized #8302345 (0x22e3…877e), ⬇ 2.7MiB/s ⬆ 1.9MiB/s
+ Idle (49 peers), best: #8302347 (0x296d…fb2f), finalized #8302345 (0x22e3…877e), ⬇ 2.7MiB/s ⬆ 1.9MiB/s
 ```
 - By default you should have around 50 peers, you can modify it to reduce or increase the number
-- Increasing number of peer will cause bigger bandwidth utilization but there is no proof that it will increase era poins
+- Increasing number of peers will cause bigger bandwidth utilization but there is no proof that it will increase era points
 
 ## Your node just discovered a new peer 
 ```
-🔍 Discovered new external address for our node: 
+ Discovered new external address for our node: 
 /ip4/x.x.63.128/tcp/30333/p2p/12D3KooWDz7FcPsbr8v5pvPngz4GtYWVrzYBsn3CLb5NVEHPBfQa
 ```
 ## Reorgs are fine and normal
 ```
-♻️  Reorg on #8302389,0x2813…6e7d to #8302389,0x012f…a2fd, common ancestor #8302388,0x723f…b858
+  Reorg on #8302389,0x2813…6e7d to #8302389,0x012f…a2fd, common ancestor #8302388,0x723f…b858
 ```
-## 🚀🚀This is what you want to see, your node has authored a block🚀🚀
+## This is what you want to see, your node has authored a block 
 ```
-🙌 Starting consensus session on top of parent 0xcc0d40157526a1447fde0249d054c44e797b5ee8fd3c46b0ef06cacbdcd2b9b1
-🎁 Prepared block for proposing at 8302664 [hash: 0x5de0dd21af6f60efe7fd90e750c323868c08573cb432aa741c684200b4864bfc; 
+ Starting consensus session on top of parent 0xcc0d40157526a1447fde0249d054c44e797b5ee8fd3c46b0ef06cacbdcd2b9b1
+ Prepared block for proposing at 8302664 [hash: 0x5de0dd21af6f60efe7fd90e750c323868c08573cb432aa741c684200b4864bfc; 
 parent_hash: 0xcc0d…b9b1; extrinsics (2): [0x8e13…4d35, 0xc9e6…2eb1]]
 ```
 ## Node is syncing, target, best and finalized blocks are displayed 
 ```
-⚙️  Syncing  0.3 bps, target=#8303186 (30 peers), best: #8303176 (0xca88…809f), 
+  Syncing  0.3 bps, target=#8303186 (30 peers), best: #8303176 (0xca88…809f), 
 finalized #8303175 (0x04ed…4512), ⬇ 49.2kiB/s ⬆ 410.8kiB/s
 ```
-## You will not going to see this too often, increas number of Validators in the Active set
+## You will not be seeing this too often, increase the number of Validators in the Active set
 ```
-💸 new validator set of size 350 has been elected via ElectionCompute::Unsigned for era 905
+ new validator set of size 350 has been elected via ElectionCompute::Unsigned for era 905
 ```
 ## New epoch 14189 will start in block 0x9c17…9142 
 ```
-👶 New epoch 14189 launching at block 0x9c17…9142 (block slot 271007079 >= start slot 271007079).
+ New epoch 14189 launching at block 0x9c17…9142 (block slot 271007079 >= start slot 271007079).
 ```
 ## New epoch starts in slot 271007679
 ```
-👶 Next epoch starts at slot 271007679
+ Next epoch starts at slot 271007679
 ```
 ## Are you running the latest version of the code? Are you sure?
 ```
-💔 Error importing block 0xbe4cdf08f705a8095a0d860ae6dfd17ef0e4766508c40d5d1a5efd4cbf6ba23d: Err(Other(ClientImport
+ Error importing block 0xbe4cdf08f705a8095a0d860ae6dfd17ef0e4766508c40d5d1a5efd4cbf6ba23d: Err(Other(ClientImport
 ("Invalid operation in the pending changes tree: Tried to import or finalize node that is an ancestor of a
 previously finalized node")))
 ```
@@ -139,7 +139,7 @@ unsigned transaction validation failed due to Module { index: 37, error: 2, mess
 ```
 ##
 ```
-Requester of candidate validation dropped
+The requester of candidate validation dropped
 ```
 ##
 ```
@@ -180,7 +180,7 @@ Failed to fetch basics from runtime API err=RuntimeApiError("Application(NotInFi
 ```
 Failed to decode transactions list
 ```
-## I'm Online message has been send by your Validator node, this usualy happens in the 2nd half of Session if your node has not produced a block.
+## I'm Online message has been sent by your Validator node, this usually happens in the 2nd half of the Session if your node has not produced a block.
 ```
 [index: 242] Reporting im-online at block: 8785522 (session: 14996): Call::heartbeat(Heartbeat { block_number: 8785522, network_state: OpaqueNetworkState... 
 ```
@@ -196,7 +196,7 @@ error=Runtime(RuntimeRequest(RuntimeApiError("Application(NotInFinalizedChain)")
 ctx="Error in Requester::update_fetching_heads"
 ```
 
-## Error after upgrading to 0.9.9 befor 0.9.9-1 was lereased
+## Error after upgrading to 0.9.9 befor 0.9.9-1 was Released
 ```
 error=Runtime(RuntimeRequest(RuntimeApiError("Application(UnknownBlock(\"State already discarded for BlockId::Hash(0x25153021ad82dc150958d1c128da1aa6285475b1bb48b7fe10c9e1e7f8757ea4)\"))")))
 ```
@@ -207,7 +207,7 @@ Importing locally an already known assignment fingerprint=Assignment
 ```
 ## Some issues connecting to the Telemetry server
 ```
-❌ Error while dialing /dns/telemetry.polkadot.io/tcp/443/x-parity-wss/%2Fsubmit%2F: Custom { kind: Other, error: Timeout }
+ Error while dialing /dns/telemetry.polkadot.io/tcp/443/x-parity-wss/%2Fsubmit%2F: Custom { kind: Other, error: Timeout }
 ```
 ## https://github.com/paritytech/polkadot/blob/8a6af4412ffc6d327775310c9b4ff527f3345958/node/network/collator-protocol/src/validator_side/mod.rs
 ```
