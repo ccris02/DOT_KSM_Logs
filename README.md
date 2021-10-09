@@ -120,7 +120,7 @@ frame/executive/src/lib.rs:456:13
 ```
 ##
 ```
-fetch_pov_job err=FetchPoV(NetworkError(Network(Timeout)))
+WARN tokio-runtime-worker parachain::dispute-distribution: error=Runtime(RuntimeRequest(RuntimeApiError("Application(UnknownBlock("State already discarded for BlockId::Hash(0x40c09f3f8c3e1ab11d9f88213847714a1fb701bfebd7a58fe99be45d1d8ad097)"))")))
 ```
 ##
 ```
@@ -152,6 +152,12 @@ fetch_pov_job err=FetchPoV(NetworkError(Network(DialFailure)))
 ##
 ```
 Detected prevote equivocation in the finality worker: Equivocation
+```
+
+## 
+```
+systemd[1]: Started Polkadot Node.
+polkadot[15309]: 2021-08-22 13:57:07 Low open file descriptor limit configured for the process. Current value: 4096, recommended value: 10000.
 ```
 
 ##
