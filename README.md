@@ -216,6 +216,7 @@ Importing locally an already known assignment fingerprint=Assignment
  Error while dialing /dns/telemetry.polkadot.io/tcp/443/x-parity-wss/%2Fsubmit%2F: Custom { kind: Other, error: Timeout }
 ```
 ## https://github.com/paritytech/polkadot/blob/8a6af4412ffc6d327775310c9b4ff527f3345958/node/network/collator-protocol/src/validator_side/mod.rs
+Probably overloaded telemetry. Nothing to worry.
 ```
 Trying to insert a pending candidate failed, because there is already one! relay_parent=0xd94c9dfda0b98974bfea0
 eaa56dd0be6afeb93094c35bf111c65669ccc68ba1e candidate=0x00b0ec80ec2e47237cd5de2c4ce9ee97028fe543eb5b29256383a664fb6f9682
